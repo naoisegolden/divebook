@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'devise', '~> 2.1.2'
 gem 'pg' # thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
+gem 'simple_form'
+gem 'country_select'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
