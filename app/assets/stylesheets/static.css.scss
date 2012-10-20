@@ -54,6 +54,13 @@ header {
 	.row.collapse form {
 		margin-top: 14px;
 	}
+	input {
+		font: {
+			size: 17px;
+			weight: 200;
+		}
+		&.button { font-size: 12px; }
+	}
 }
 
 #copyright {
