@@ -35,9 +35,13 @@
         </ul>
 
         <ul class="right">
-          <li><a href="<%= users_url %>">Users</a></li>
-          <li><a href="<%= about_url %>">About</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user, user_path(current_user.id) %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li><a href="<%= user_session_path %>">Sign In</a></li>
+            <li><a href="<%= new_user_registration_url %>">Sign Up</a></li>
+          <% end %>
         </ul>
       </section>
     </nav>
@@ -70,7 +74,15 @@
           <% end %>
         <% end %>
 
+        <% if flash[:alert] %>
+          <%= content_tag :div, :id => "flash_name", :class => "alert-box alert" do %>
+            <%= flash[:alert] %>
+            <a class="close">x</a>
+          <% end %>
+        <% end %>
+
     		<%= yield %>
+
   	  </div>
   	  <div class="four columns">
   	    <%= content_for?(:sidebar) ? yield(:sidebar) : "" %>
@@ -79,22 +91,8 @@
   </section>
 
   <footer class="row">
-    <section class="five columns">
-      <h6><strong>What is Divebook?</strong></h6>
-      <p>Divebook is a project under development. Not much more to see.<br><a href="mailto:naoise.golden@gmail.com?subject=About%20Divebook">Get in touch →</a></p>
-    </section>
-
-    <section class="three columns">
-      <h6><strong>Lorem ipsum</strong></h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor.</p>
-    </section>
-
-    <section class="four columns">
-      <h6><strong>Lorem ipsum</strong></h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p>
-    
+    <section class="twelve columns">
+      <p><strong>What is Divebook?</strong> Divebook is a project under development. Not much more to see. <a href="mailto:naoise.golden@gmail.com?subject=About%20Divebook">Get in touch →</a></p>
     </section>
   </footer>
 

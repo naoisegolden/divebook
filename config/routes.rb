@@ -1,14 +1,13 @@
 Divebook::Application.routes.draw do
 
+  # Users
   devise_for :users
+  resources :users, :only => :show
 
   # Static pages
-  match 'home', :to => "static#index"
   root :to => "static#index"
   match 'about', :to => "static#about"
 
-  # Users
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
