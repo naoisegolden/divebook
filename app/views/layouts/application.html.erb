@@ -35,6 +35,7 @@
         </ul>
 
         <ul class="right">
+          <li><a href="<%= users_url %>">Users</a></li>
           <li><a href="<%= about_url %>">About</a></li>
           <li><a href="#">Sign Up</a></li>
         </ul>
@@ -46,7 +47,7 @@
   <header id="header">
     <div class="row">
       <div class="twelve columns">
-        <h1><%= yield(:page_title) %></h1>
+        <h2><%= yield(:page_title) %></h2>
         <h4 class="subheader"><%= yield(:page_tagline) %></h4>
       </div>
     </div>
@@ -55,6 +56,20 @@
   <section id="main-content">
   	<div class="row">
   	  <div class="eight columns">
+        <% if flash[:error] %>
+          <%= content_tag :div, :id => "flash_name", :class => "alert-box error" do %>
+            <%= flash[:error] %>
+            <a class="close">x</a>
+          <% end %>
+        <% end %>
+
+        <% if flash[:notice] %>
+          <%= content_tag :div, :id => "flash_name", :class => "alert-box success" do %>
+            <%= flash[:notice] %>
+            <a class="close">x</a>
+          <% end %>
+        <% end %>
+
     		<%= yield %>
   	  </div>
   	  <div class="four columns">

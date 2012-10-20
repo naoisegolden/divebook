@@ -1,0 +1,23 @@
+<table>
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>username</th>
+			<th>actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+		<tr>
+			<td><%= user.id %></td>
+			<td><%= user.name %></td>
+			<td><%= user.email %></td>
+			<td></td>
+		</tr>
+		<% end %>
+	</tbody>
+	<tfoot></tfoot>
+</table>
+
+<%= link_to 'New user', new_user_path, :class => 'button' %>
