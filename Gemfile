@@ -5,6 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
 gem 'pg'
 
 
