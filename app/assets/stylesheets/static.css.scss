@@ -1,3 +1,68 @@
 // Place all the styles related to the static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// color scheme from: https://kuler.adobe.com/#themeID/2087606
+$marineblue: #011640;
+$riverblue: #1747A6;
+$skyblue: #3DC9D9;
+$complementarylight: #BED95F;
+$complementarydark: #593B34; 
+
+
+.top-bar h1 a {
+	vertical-align: top;
+}
+
+header {
+	background-color: $skyblue;
+	padding: 20px 0;
+	h1 {
+		color: white;
+	}
+	.subheader {
+		color: white;
+	}
+}
+
+#main-content {
+	margin-top: 44px;
+	margin-bottom: 22px;
+	padding-bottom: 22px;
+	border-bottom: 1px solid #EEE;
+	overflow: hidden;
+}
+
+#newsletter {
+	background: #EEE;
+	padding: 11px 0 0 0;
+
+	h5 {
+		margin-bottom: 0px;
+		margin-top: 10px;
+		color: #333;
+		line-height: 24px;
+	}
+
+	p {
+		clear: both;
+		font-size: 12px;
+		padding-top: 2px;
+		color: #777;
+	}
+
+	.row.collapse form {
+		margin-top: 14px;
+	}
+}
+
+#copyright {
+	background: #3F3F3F;
+	color: white;
+	padding: 11px 0;
+
+	p, ul.link-list { margin-bottom: 0; }
+
+	a { color: white; }
+
+}

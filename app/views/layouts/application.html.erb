@@ -24,15 +24,100 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="row">
-	  <div class="eight columns">
-  		<%= yield %>
-	  </div>
-	  <div class="four columns">
-	    <%= content_for?(:sidebar) ? yield(:sidebar) : "Nothing here" %>
-	  </div>
-	</div>
+  <div class="contain-to-grid">
+    <nav class="top-bar">
+      <ul>
+        <li class="name"><h1><a href="<%= root_url %>"><i class="general foundicon-globe"></i> Divebook</a></h1></li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+      </ul>
+      <section>
+        <ul class="left">
+          <li><a href="<%= about_url %>">About</a></li>
+        </ul>
 
-	
+        <ul class="right">
+          <li><a href="#">Sign Up</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+
+  <header id="header">
+    <div class="row">
+      <div class="twelve columns">
+        <h1><%= yield(:page_title) %></h1>
+        <h4 class="subheader"><%= yield(:page_tagline) %></h4>
+      </div>
+    </div>
+  </header>
+
+  <section id="main-content">
+  	<div class="row">
+  	  <div class="eight columns">
+    		<%= yield %>
+  	  </div>
+  	  <div class="four columns">
+  	    <%= content_for?(:sidebar) ? yield(:sidebar) : "" %>
+  	  </div>
+  	</div>
+  </section>
+
+  <footer class="row">
+    <section class="five columns">
+      <h6><strong>What is Divebook?</strong></h6>
+      <p>Divebook is a project under development. Not much more to see.<br><a href="mailto:naoise.golden@gmail.com?subject=About%20Divebook">Get in touch →</a></p>
+    </section>
+
+    <section class="three columns">
+      <h6><strong>Lorem ipsum</strong></h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor.</p>
+    </section>
+
+    <section class="four columns">
+      <h6><strong>Lorem ipsum</strong></h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.</p>
+    
+    </section>
+  </footer>
+
+  <div id="newsletter">
+    <div class="row">
+      
+      <div class="eight columns">
+        <h5>Get notified when Divebook is out.</h5>
+        <p>Contribute on <a href="http://github.com/naoisegolden/divebook">Github</a></p>
+      </div>
+    
+      <div class="four columns">
+        <div class="row collapse">
+          <form method="post">
+            <div class="eight mobile-three columns">
+              <input type="text" name="email" placeholder="signup@example.com">            </div>
+                        <div class="four mobile-one columns">
+              <input type="submit" href="#" class="postfix button expand" value="Sign Up">
+            </div>
+                      </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="copyright">
+    <div class="row">
+      <div class="four columns">
+        <p>Site content © 2012 Divebook</p>
+      </div>
+      <div class="eight columns">
+        <ul class="link-list right">
+          <li><%= link_to 'Home', root_url %></li>
+          <li><%= link_to 'About', about_url %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
