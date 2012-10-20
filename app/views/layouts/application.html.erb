@@ -24,6 +24,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= yield %>
+	<div class="row">
+	  <div class="eight columns">
+  		<%= yield %>
+	  </div>
+	  <div class="four columns">
+	    <%= content_for?(:sidebar) ? yield(:sidebar) : "Nothing here" %>
+	  </div>
+	</div>
+
+	
 </body>
 </html>
