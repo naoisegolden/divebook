@@ -37,6 +37,7 @@
         <ul class="right">
           <% if user_signed_in? %>
             <li><%= link_to current_user, user_path(current_user.id) %></li>
+            <li><%= link_to 'Account', edit_user_registration_path(current_user.id) %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
           <% else %>
             <li><a href="<%= user_session_path %>">Sign In</a></li>
@@ -59,7 +60,7 @@
 
   <section id="main-content">
   	<div class="row">
-  	  <div class="eight columns">
+  	  <div class="twelve columns">
         <% if flash[:error] %>
           <%= content_tag :div, :id => "flash_name", :class => "alert-box error" do %>
             <%= flash[:error] %>
@@ -83,9 +84,6 @@
 
     		<%= yield %>
 
-  	  </div>
-  	  <div class="four columns">
-  	    <%= content_for?(:sidebar) ? yield(:sidebar) : "" %>
   	  </div>
   	</div>
   </section>
