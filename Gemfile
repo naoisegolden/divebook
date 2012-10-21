@@ -1,11 +1,19 @@
 source 'https://rubygems.org'
 
+# basic
 gem 'rails', '3.2.8'
-gem 'devise', '~> 2.1.2'
-gem 'devise_mailchimp', :git => 'git://github.com/naoisegolden/devise_mailchimp.git'
 gem 'pg' # thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
+
+# simple form
 gem 'simple_form'
 gem 'country_select'
+
+#devise
+gem 'devise', '~> 2.1.2'
+gem 'devise_mailchimp', :git => 'git://github.com/naoisegolden/devise_mailchimp.git'
+gem 'omniauth'
+gem 'oauth2'
+gem 'omniauth-facebook'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
