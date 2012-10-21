@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<p>You can <%= link_to "sign up with Facebook", user_omniauth_authorize_path(:facebook) %>.</p>
+<p>You can <%= link_to "sign in with Facebook", user_omniauth_authorize_path(:facebook) %>.</p>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
