@@ -13,7 +13,7 @@ Divebook::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # defaulr url for mailer
+  # mailer configuration
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Don't care if the mailer can't send

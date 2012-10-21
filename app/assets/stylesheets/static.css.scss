@@ -8,6 +8,7 @@ $riverblue: #1747A6;
 $skyblue: #3DC9D9;
 $complementarylight: #BED95F;
 $complementarydark: #593B34; 
+$lightgray: #EEE;
 
 
 .top-bar h1 a {
@@ -34,7 +35,7 @@ header {
 }
 
 #newsletter {
-	background: #EEE;
+	background: $lightgray;
 	padding: 11px 0 0 0;
 
 	h5 {

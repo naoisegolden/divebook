@@ -64,23 +64,10 @@
   <section id="main-content">
   	<div class="row">
   	  <div class="twelve columns">
-        <% if flash[:error] %>
-          <%= content_tag :div, :id => "flash_name", :class => "alert-box error" do %>
-            <%= flash[:error] %>
-            <a class="close">x</a>
-          <% end %>
-        <% end %>
 
-        <% if flash[:notice] %>
-          <%= content_tag :div, :id => "flash_name", :class => "alert-box success" do %>
-            <%= flash[:notice] %>
-            <a class="close">x</a>
-          <% end %>
-        <% end %>
-
-        <% if flash[:alert] %>
-          <%= content_tag :div, :id => "flash_name", :class => "alert-box alert" do %>
-            <%= flash[:alert] %>
+        <% flash.each do |name, message| %>
+          <%= content_tag :div, :id => "flash_#{name}", :class => "alert-box #{name}" do %>
+            <%= message %>
             <a class="close">x</a>
           <% end %>
         <% end %>
