@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/naoisegolden/devise_mailchimp.git
-  revision: c985cdefd36031f5826107e13884eae8ff6e7522
+  remote: https://github.com/naoisegolden/devise_mailchimp.git
+  revision: b33f990441e5259352e01e6af6532bbc979b9ff6
   specs:
     devise_mailchimp (0.0.3)
       devise (>= 1.4.8, < 2.2.0)

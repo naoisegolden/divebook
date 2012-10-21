@@ -10,7 +10,7 @@ gem 'country_select'
 
 #devise
 gem 'devise', '~> 2.1.2'
-gem 'devise_mailchimp', :git => 'git@github.com/naoisegolden/devise_mailchimp.git'
+gem 'devise_mailchimp', :git => 'https://github.com/naoisegolden/devise_mailchimp.git'
 gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'
