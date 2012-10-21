@@ -10,7 +10,7 @@ gem 'country_select'
 
 #devise
 gem 'devise', '~> 2.1.2'
-gem 'devise_mailchimp', :git => 'git://github.com/naoisegolden/devise_mailchimp.git'
+gem 'devise_mailchimp', :git => 'git@github.com/naoisegolden/devise_mailchimp.git'
 gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'
@@ -22,7 +22,7 @@ group :assets do
 
   gem 'compass-rails', '~> 1.0.3'
   gem 'zurb-foundation', '~> 3.1.1'
-  gem 'foundation-icons-sass-rails'	
+  gem 'foundation-icons-sass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
