@@ -3,6 +3,13 @@ Divebook::Application.configure do
 
   # mailer config
   config.action_mailer.default_url_options = { :host => 'divebook.herokuapp.com' }
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587,
+    :user_name => ENV["MANDRILL_USERNAME"],
+    :password  => ENV["MANDRILL_API_KEY"]
+  }
 
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -50,9 +57,6 @@ Divebook::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
 
   # Enable threaded mode
   # config.threadsafe!
