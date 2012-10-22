@@ -1,5 +1,4 @@
-<% content_for :title, "Divebook - #{@user}" %>
-<% content_for :page_title, @user %>
-<% content_for :page_tagline, 'this is your profile' %>
+<% title @user %>
+<% tagline 'this is your profile' %>
 
-<p>Under construction.</p>
+You are in <address><%= @location.address %></address>

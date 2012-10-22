@@ -1,0 +1,17 @@
+<% title "Locations" %>
+
+<table>
+  <% for location in @locations %>
+    <tr>
+      <td><%= image_tag "http://maps.google.com/maps/api/staticmap?size=50x50&sensor=false&zoom=12&center=#{location.latitude}%2C#{location.longitude}" %></td>
+      <td><%= location.address %></td>
+      <!-- <td><%= location.latitude %></td>
+      <td><%= location.longitude %></td> -->
+      <td><%= link_to "Show", location %></td>
+      <td><%= link_to "Edit", edit_location_path(location) %></td>
+      <td><%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "New Location", new_location_path, class: 'button' %>
