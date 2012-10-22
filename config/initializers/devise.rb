@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = ENV['MAIL_FROM_DEVISE']
 
   # devise_mailchimp configurations
   Devise.mailchimp_api_key = ENV['MAILCHIMP_API_KEY']
