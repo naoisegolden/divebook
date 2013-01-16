@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # basic
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'pg' # thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
 
 # simple form
