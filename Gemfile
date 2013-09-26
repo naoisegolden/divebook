@@ -8,7 +8,7 @@ gem 'pg' # thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
 gem 'simple_form'
 gem 'country_select'
 
-#devise
+# devise
 gem 'devise', '~> 2.1.2'
 gem 'devise_mailchimp'
 gem 'omniauth'
@@ -19,6 +19,9 @@ gem 'geocoder'
 
 gem "nifty-generators", :group => :development
 gem "mocha", :group => :test
+
+# monitoring
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
