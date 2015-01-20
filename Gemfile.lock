@@ -53,9 +53,6 @@ GEM
     hashie (3.3.2)
     hike (1.2.3)
     i18n (0.7.0)
-    jquery-rails (3.1.2)
-      railties (>= 3.0, < 5.0)
-      thor (>= 0.14, < 2.0)
     json (1.8.2)
     jwt (1.2.0)
     mail (2.6.3)
@@ -149,7 +146,6 @@ DEPENDENCIES
   devise (~> 3.4.1)
   foundation-icons-sass-rails
   geocoder
-  jquery-rails
   mocha
   newrelic_rpm
   nifty-generators
