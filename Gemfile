@@ -10,7 +10,6 @@ gem 'country_select'
 
 # devise
 gem 'devise', '~> 2.1.2'
-gem 'devise_mailchimp'
 gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'
