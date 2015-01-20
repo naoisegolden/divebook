@@ -30,6 +30,13 @@ GEM
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
     builder (3.2.2)
+    chunky_png (1.3.3)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     countries (0.9.3)
       currencies (~> 0.4.2)
     country_select (2.1.0)
@@ -49,6 +56,7 @@ GEM
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    fssm (0.2.10)
     geocoder (1.2.6)
     hashie (3.3.2)
     hike (1.2.3)
@@ -62,6 +70,8 @@ GEM
     minitest (5.5.1)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
+    modular-scale (2.0.5)
+      compass (>= 0.12.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -85,6 +95,8 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.1)
+    protected_attributes (1.0.8)
+      activemodel (>= 4.0.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -106,13 +118,12 @@ GEM
     rake (10.4.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    sass (3.4.10)
-    sass-rails (5.0.1)
+    sass (3.2.19)
+    sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (~> 1.1)
+      sass (~> 3.2.2)
+      sprockets (~> 2.8, < 3.0)
+      sprockets-rails (~> 2.0)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -135,13 +146,17 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
-    zurb-foundation (4.3.2)
+    zurb-foundation (3.1.1)
+      compass (>= 0.12.2)
+      modular-scale (>= 1.0.2)
+      rake
       sass (>= 3.2.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  compass-rails
   country_select
   devise (~> 3.4.1)
   foundation-icons-sass-rails
@@ -153,7 +168,9 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg
+  protected_attributes
   rails (= 4.1.9)
+  sass-rails (~> 4.0.2)
   simple_form
   uglifier (>= 1.0.3)
-  zurb-foundation (~> 4.3.2)
+  zurb-foundation (~> 3.1.1)

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # basic
 gem 'rails', '4.1.9'
 gem 'pg' # thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
+gem 'protected_attributes'
 
 # simple form
 gem 'simple_form'
@@ -27,8 +28,9 @@ group :assets do
   # gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 
-  # gem 'compass-rails', '~> 1.0.3'
-  gem 'zurb-foundation', '~> 4.3.2'
+  gem 'sass-rails', '~> 4.0.2'
+  gem 'compass-rails'
+  gem 'zurb-foundation', '~> 3.1.1'
   gem 'foundation-icons-sass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

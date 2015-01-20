@@ -9,7 +9,7 @@ Divebook::Application.routes.draw do
 
   # Static pages
   root :to => "static#index"
-  match 'about', :to => "static#about"
+  get 'about', :to => "static#about"
 
 
   # The priority is based upon order of creation:
