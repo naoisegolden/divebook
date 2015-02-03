@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # basic
-gem 'rails', '4.1.9'
+gem 'rails', '4.2.0'
 gem 'pg' # thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
 gem 'protected_attributes'
 
@@ -15,40 +15,24 @@ gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'
 
+# geocoding
 gem 'geocoder'
-
-gem "nifty-generators", :group => :development
-gem "mocha", :group => :test
 
 # monitoring
 gem 'newrelic_rpm'
 
 group :assets do
-  # gem 'sass-rails',   '~> 3.2.3'
-  # gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 
   gem 'sass-rails', '~> 4.0.2'
   gem 'compass-rails'
   gem 'zurb-foundation', '~> 3.1.1'
-  gem 'foundation-icons-sass-rails'
+  gem 'foundation-icons-sass-rails', git: "git://github.com/zaiste/foundation-icons-sass-rails.git", branch: "v2.x"
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
+  # gem 'sass', '3.2.10'
+  # gem 'compass', '0.12.2'
+  gem 'modular-scale', '1.0.2'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
