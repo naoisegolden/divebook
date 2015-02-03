@@ -1,6 +1,6 @@
 # Divebook
 
-[![Build Status](https://secure.travis-ci.org/naoisegolden/divebook.png)](http://travis-ci.org/naoisegolden/divebook) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/naoisegolden/divebook)
+[![Build Status](https://secure.travis-ci.org/naoisegolden/divebook.png)](http://travis-ci.org/naoisegolden/divebook) [![Code Climate](https://codeclimate.com/github/naoisegolden/divebook/badges/gpa.svg)](https://codeclimate.com/github/naoisegolden/divebook) [![Test Coverage](https://codeclimate.com/github/naoisegolden/divebook/badges/coverage.svg)](https://codeclimate.com/github/naoisegolden/divebook)
 
 Divebook is a project under development. Not much more to see. <a href="https://plus.google.com/103700467070879436555/" rel="author">By Naoise Golden</a>
 
