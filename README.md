@@ -6,7 +6,7 @@ Divebook is a project under development. Not much more to see. <a href="https://
 
 ## Install & config
 
-Needs Ruby 1.9.3, Rails 3.2 and PostgreSQL (using 9.2.1).
+Needs Ruby 2.2.0, Rails 4.2 and PostgreSQL (using 9.2.1).
 
     $ git clone git@github.com:naoisegolden/divebook.git & cd divebook
     $ bundle install
@@ -36,7 +36,7 @@ To start the PostgreSQL server:
 
     $ git push heroku master
 
-If a migration file has been pushed: 
+If a migration file has been pushed:
 
     $ heroku run rake db:migrate
 
