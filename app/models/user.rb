@@ -4,11 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :name, :country
-  attr_accessible :password, :password_confirmation, :remember_me # for devise
-  attr_accessible :provider, :uid # for oauth
-
   def to_s
   	name ? name : email
   end
