@@ -29,5 +29,8 @@ gem 'zurb-foundation', '~> 3.1.1'
 gem 'foundation-icons-sass-rails', github: "zaiste/foundation-icons-sass-rails", branch: "v2.x"
 gem 'modular-scale', '1.0.2' # fixes incompatibility with old foundation
 
+# Code Climate test coverage
+gem "codeclimate-test-reporter", group: :test, require: nil
+
 # To use debugger
 # gem 'debugger'
