@@ -3,7 +3,7 @@ development:
   database: divebook_development
   pool: 5
   timeout: 5000
-  username: administrador
+  username: administrator
   host: localhost
   port: 5432
 
@@ -12,6 +12,6 @@ test:
   database: divebook_test
   pool: 5
   timeout: 5000
-  username: administrador
+  username: administrator
   host: localhost
   port: 5432
