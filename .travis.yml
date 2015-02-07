@@ -8,3 +8,6 @@ before_script:
 addons:
   code_climate:
     repo_token: be20bf0ededc1a9bfd7ffcdbae0e6dbbb59f31fbc64c18dccb62309f095ead9b
+
+notifications:
+  slack: divebook:BVocZwhc0uFYb5iGkASLim1H
