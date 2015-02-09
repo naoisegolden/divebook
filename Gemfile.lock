@@ -49,6 +49,7 @@ GEM
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
+    api-pagination (4.1.0)
     arel (6.0.0)
     awesome_print (1.6.1)
     bcrypt (3.1.10)
@@ -92,6 +93,8 @@ GEM
       dotenv (~> 1.0)
     erubis (2.7.0)
     execjs (2.3.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     fssm (0.2.10)
@@ -107,6 +110,9 @@ GEM
     i18n (0.7.0)
     json (1.8.2)
     jwt (1.2.1)
+    kaminari (0.16.2)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.3.0)
@@ -244,6 +250,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  api-pagination
   awesome_print
   better_errors
   binding_of_caller
@@ -253,9 +260,11 @@ DEPENDENCIES
   country_select
   devise (~> 3.4.1)
   dotenv-deployment
+  faker (~> 1.4)
   foundation-icons-sass-rails!
   geocoder
   hirb-unicode
+  kaminari
   letter_opener
   meta_request (~> 0.3)
   modular-scale (= 1.0.2)

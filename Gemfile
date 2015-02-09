@@ -22,6 +22,11 @@ gem 'newrelic_rpm'
 
 # ENV variables
 gem 'dotenv-deployment'
+gem 'faker', '~> 1.4'
+
+# API
+gem 'kaminari'
+gem 'api-pagination'
 
 #assets
 gem 'uglifier', '>= 2.7.0'
