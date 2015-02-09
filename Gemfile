@@ -27,6 +27,7 @@ gem 'faker', '~> 1.4'
 # API
 gem 'kaminari'
 gem 'api-pagination'
+gem 'active_model_serializers', '~> 0.9'
 
 #assets
 gem 'uglifier', '>= 2.7.0'
