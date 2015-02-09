@@ -20,6 +20,9 @@ gem 'geocoder'
 # monitoring
 gem 'newrelic_rpm'
 
+# ENV variables
+gem 'dotenv-deployment'
+
 #assets
 gem 'uglifier', '>= 2.7.0'
 
@@ -32,5 +35,23 @@ gem 'modular-scale', '1.0.2' # fixes incompatibility with old foundation
 # Code Climate test coverage
 gem "codeclimate-test-reporter", group: :test, require: nil
 
-# To use debugger
-# gem 'debugger'
+group :development do
+  gem 'web-console', '~> 2.0'
+  gem 'rails-footnotes'
+
+  # Console
+  gem 'pry-rails'
+  gem 'hirb-unicode'
+  gem 'awesome_print'
+
+  # Chrome extensions
+  gem 'meta_request', '~> 0.3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'bullet'
+  gem 'annotate'
+end
+
+group :development, :test do
+  gem 'letter_opener'
+end

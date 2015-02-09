@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: locations
+#
+#  id         :integer          not null, primary key
+#  address    :string
+#  latitude   :float
+#  longitude  :float
+#  created_at :datetime
+#  updated_at :datetime
+#
 class Location < ActiveRecord::Base
   geocoded_by :address do |obj,results|
     if geo = results.first

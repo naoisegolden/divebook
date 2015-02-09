@@ -45,12 +45,28 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.7)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (6.0.0)
+    awesome_print (1.6.1)
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    bullet (4.14.4)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
+    callsite (0.0.11)
     chunky_png (1.3.3)
     codeclimate-test-reporter (0.4.6)
       simplecov (>= 0.7.1, < 1.0.0)
+    coderay (1.1.0)
     compass (0.12.7)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -62,6 +78,7 @@ GEM
     country_select (2.1.1)
       countries (>= 0.9.3, < 0.10.0)
     currencies (0.4.2)
+    debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -70,23 +87,39 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     docile (1.1.5)
+    dotenv (1.0.2)
+    dotenv-deployment (0.2.0)
+      dotenv (~> 1.0)
     erubis (2.7.0)
     execjs (2.3.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     fssm (0.2.10)
     geocoder (1.2.7)
-    globalid (0.3.0)
+    globalid (0.3.2)
       activesupport (>= 4.1.0)
     hashie (3.4.0)
     hike (1.2.3)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (0.7.0)
     json (1.8.2)
     jwt (1.2.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.3.0)
+      launchy (~> 2.2)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meta_request (0.3.4)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.0.0)
+    method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -117,7 +150,15 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.3)
+      pry (>= 0.9.10)
     rack (1.6.0)
+    rack-contrib (1.2.0)
+      rack (>= 0.9.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -137,6 +178,8 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-footnotes (4.1.5)
+      rails (>= 3.2)
     rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
     railties (4.2.0)
@@ -163,6 +206,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
+    slop (3.6.0)
     sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -180,8 +224,15 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode-display_width (0.1.1)
+    uniform_notifier (1.7.0)
     warden (1.2.3)
       rack (>= 1.0)
+    web-console (2.0.0)
+      activemodel (~> 4.0)
+      binding_of_caller (>= 0.7.2)
+      railties (~> 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
     zurb-foundation (3.1.1)
       compass (>= 0.12.2)
       modular-scale (>= 1.0.2)
@@ -192,20 +243,32 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  awesome_print
+  better_errors
+  binding_of_caller
+  bullet
   codeclimate-test-reporter
   compass-rails
   country_select
   devise (~> 3.4.1)
+  dotenv-deployment
   foundation-icons-sass-rails!
   geocoder
+  hirb-unicode
+  letter_opener
+  meta_request (~> 0.3)
   modular-scale (= 1.0.2)
   newrelic_rpm
   oauth2
   omniauth
   omniauth-facebook
   pg
+  pry-rails
   rails (= 4.2.0)
+  rails-footnotes
   sass-rails (~> 4.0.2)
   simple_form
   uglifier (>= 2.7.0)
+  web-console (~> 2.0)
   zurb-foundation (~> 3.1.1)
