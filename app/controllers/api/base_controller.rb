@@ -9,6 +9,15 @@ class Api::BaseController < ApplicationController
     render json: { error: 'Unexpected Error' }, status: :internal_server_error
   end
 
+  def authenticate!
+    render json: { error: '401 Unauthorized' }, status: :unauthorized unless authenticated
+  end
+
+  def authenticated
+    return true if warden.authenticated?
+    params[:access_token] && @user = User.find_by(authentication_token: params[:access_token])
+  end
+
   private
 
   def record_not_found(error)

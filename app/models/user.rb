@@ -23,8 +23,11 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  authentication_token   :string
 #
 class User < ActiveRecord::Base
+  before_save :ensure_authentication_token
+
   devise :database_authenticatable,
          :registerable,
          :omniauthable,
@@ -54,4 +57,18 @@ class User < ActiveRecord::Base
     user
   end
 
+  private
+
+  def ensure_authentication_token
+    if authentication_token.blank?
+      self.authentication_token = generate_authentication_token
+    end
+  end
+
+  def generate_authentication_token
+    loop do
+      token = Devise.friendly_token
+      break token unless User.where(authentication_token: token).first
+    end
+  end
 end

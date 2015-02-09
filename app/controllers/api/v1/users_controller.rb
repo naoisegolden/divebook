@@ -1,4 +1,5 @@
 class Api::V1::UsersController < Api::BaseController
+  before_action :authenticate!
   before_action :set_user, only: [:show, :update, :destroy]
   before_action :return_user, only: :show
 
@@ -46,6 +47,6 @@ class Api::V1::UsersController < Api::BaseController
   end
 
   def user_params
-    params.permit(:name, :email, :password)
+    params.permit(:name, :email, :password, :access_token)
   end
 end
