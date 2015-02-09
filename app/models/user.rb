@@ -25,10 +25,14 @@
 #  unconfirmed_email      :string
 #
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :lockable, :timeoutable
-  devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  devise :database_authenticatable,
+         :registerable,
+         :omniauthable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   def to_s
   	name ? name : email
