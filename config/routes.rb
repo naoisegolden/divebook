@@ -6,14 +6,15 @@ Divebook::Application.routes.draw do
       resources :divesites, except: [:new, :edit]
       get 'users/:user_id/divesites', to: 'divesites#index'
 
-      resources :users, except: [:create, :new, :edit]
+      resources :users, only: [:show, :update, :destroy]
+      get 'divesites/:divesite_id/users', to: 'users#index'
       post 'auth', to: 'users#auth'
     end
   end
 
   #Locations
   resources :locations
-
+devise_for
   # Users
   devise_for :users, :controllers => { :registrations => :registrations, :omniauth_callbacks => 'users/omniauth_callbacks' }
   resources :users, :only => :show

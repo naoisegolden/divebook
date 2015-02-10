@@ -4,7 +4,9 @@ class Api::V1::UsersController < Api::BaseController
   before_action :return_user, only: :show
 
   def index
-    @users = paginate User.all
+    set_divesite
+
+    @users = paginate @divesite.users
 
     render json: @users, each_serializer: UserSerializer
   end
@@ -42,6 +44,10 @@ class Api::V1::UsersController < Api::BaseController
   end
 
   private
+
+  def set_divesite
+    @divesite = Divesite.find(params[:divesite_id])
+  end
 
   def set_user
     @user = User.find(params[:id])
