@@ -23,4 +23,8 @@ class Api::BaseController < ApplicationController
   def record_not_found(error)
     render json: { error: error.message }, status: :not_found
   end
+
+  def default_serializer_options
+    {root: false}
+  end
 end

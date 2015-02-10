@@ -8,3 +8,10 @@ count = 0
 
   count += 1
 end
+
+15.times do
+  address = "#{Faker::Address.city}, #{Faker::Address.country}"
+  Divesite.create(
+    name: Faker::Company.name,
+    address: address,)
+end
