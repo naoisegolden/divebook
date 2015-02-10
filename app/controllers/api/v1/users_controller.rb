@@ -1,6 +1,6 @@
 class Api::V1::UsersController < Api::BaseController
-  before_action :authenticate!
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :authenticate!, except: :auth
+  before_action :set_user, except: [:index, :auth]
   before_action :return_user, only: :show
 
   def index
@@ -10,18 +10,6 @@ class Api::V1::UsersController < Api::BaseController
   end
 
   def show
-  end
-
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      return_user
-    elsif @user.invalid?
-      unprocessable_entity(@user)
-    else
-      unexpected_error
-    end
   end
 
   def update
@@ -34,6 +22,23 @@ class Api::V1::UsersController < Api::BaseController
 
   def destroy
     return_user if @user.destroy
+  end
+
+  def auth
+    @user = User.new(user_params)
+
+    if @user.save
+      render json: {
+        id: @user.id,
+        name: @user.name,
+        email: @user.email,
+        access_token: @user.authentication_token
+      }
+    elsif @user.invalid?
+      unprocessable_entity(@user)
+    else
+      unexpected_error
+    end
   end
 
   private
