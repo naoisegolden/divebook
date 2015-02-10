@@ -11,6 +11,9 @@
 #  updated_at :datetime         not null
 #
 class Divesite < ActiveRecord::Base
+  has_many :dives, class_name: 'Dive'
+  has_many :users, through: :dives
+
   geocoded_by :address
 
   validates :address, presence: true

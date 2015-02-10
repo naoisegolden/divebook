@@ -26,6 +26,9 @@
 #  authentication_token   :string
 #
 class User < ActiveRecord::Base
+  has_many :dives, class_name: 'Dive'
+  has_many :divesites, through: :dives
+
   before_save :ensure_authentication_token
 
   devise :database_authenticatable,

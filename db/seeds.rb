@@ -13,5 +13,12 @@ end
   address = "#{Faker::Address.city}, #{Faker::Address.country}"
   Divesite.create(
     name: Faker::Company.name,
-    address: address,)
+    address: address)
+end
+
+20.times do
+  Dive.create(
+    user_id: rand(1...15),
+    divesite_id: rand(1...15),
+    date: Faker::Date.between(5.month.ago, Date.today))
 end
