@@ -45,12 +45,12 @@ class Api::V1::UsersController < Api::BaseController
 
   private
 
-  def set_divesite
-    @divesite = Divesite.find(params[:divesite_id])
-  end
-
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_divesite
+    @divesite = Divesite.find(params[:divesite_id])
   end
 
   def return_user
