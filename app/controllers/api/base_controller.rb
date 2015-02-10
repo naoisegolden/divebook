@@ -15,7 +15,7 @@ class Api::BaseController < ApplicationController
 
   def authenticated
     return true if warden.authenticated?
-    params[:access_token] && @user = User.find_by(authentication_token: params[:access_token])
+    params[:access_token] && @current_user = User.find_by(authentication_token: params[:access_token])
   end
 
   private

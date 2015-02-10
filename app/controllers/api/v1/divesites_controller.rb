@@ -4,7 +4,9 @@ class Api::V1::DivesitesController < Api::BaseController
   before_action :return_divesite, only: :show
 
   def index
-    @divesites = paginate Divesite.all
+    set_user if params[:user_id].present?
+
+    @divesites = paginate(@user.present? ? @user.divesites : Divesite.all)
 
     render json: @divesites, each_serializer: DivesiteSerializer
   end
@@ -40,6 +42,10 @@ class Api::V1::DivesitesController < Api::BaseController
 
   def set_divesite
     @divesite = Divesite.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def return_divesite

@@ -2,7 +2,10 @@ Divebook::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :dives, except: [:new, :edit]
+
       resources :divesites, except: [:new, :edit]
+      get 'users/:user_id/divesites', to: 'divesites#index'
+
       resources :users, except: [:create, :new, :edit]
       post 'auth', to: 'users#auth'
     end
