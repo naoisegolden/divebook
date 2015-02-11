@@ -30,5 +30,13 @@ FactoryGirl.define do
     name     Faker::Name.name
     email    Faker::Internet.email
     password Faker::Internet.password(8)
+
+    factory :user_with_3_divesites do
+      after(:create) do |user|
+        3.times do
+          user.divesites << FactoryGirl.create(:divesite, address: Faker::Address.city)
+        end
+      end
+    end
   end
 end

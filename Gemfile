@@ -61,9 +61,9 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'letter_opener'
 end

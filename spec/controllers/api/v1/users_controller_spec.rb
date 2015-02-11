@@ -44,6 +44,12 @@ describe Api::V1::UsersController do
       expect(response).to have_http_status(:unauthorized)
     end
 
+    it 'returns 404 Not Found' do
+      get :show, id: 100000, access_token: user.authentication_token
+
+      expect(response).to have_http_status(:not_found)
+    end
+
     before(:each) { get :show, id: user.id, access_token: user.authentication_token }
 
     it 'returns 200 OK' do
@@ -59,6 +65,7 @@ describe Api::V1::UsersController do
 
   describe 'PUT #update' do
     let(:user) { create(:user) }
+    let(:new_name) { Faker::Name.name }
 
     it 'returns unauthorized' do
       put :update, id: user.id
@@ -67,7 +74,7 @@ describe Api::V1::UsersController do
     end
 
     before(:each) do
-      put :update, id: user.id, name: 'Batman', access_token: user.authentication_token
+      put :update, id: user.id, name: new_name, access_token: user.authentication_token
     end
 
     it 'returns 200 OK' do
@@ -75,9 +82,7 @@ describe Api::V1::UsersController do
     end
 
     it 'returns the updated User object' do
-      user_json = { 'id' => user.id, 'name' => 'Batman' }
-
-      expect(json).to eq(user_json)
+      expect(json['name']).to eq(new_name)
     end
   end
 
@@ -131,6 +136,15 @@ describe Api::V1::UsersController do
 
     it 'returns access token for the User' do
       expect(json['access_token']).to be
+    end
+
+    it 'returns 422 Unprocessable Entity after same request' do
+      post :auth,
+            name: user.name,
+            email: user.email,
+            password: user.password
+
+      expect(response).to have_http_status(:unprocessable_entity)
     end
   end
 end
