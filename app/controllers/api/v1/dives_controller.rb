@@ -24,7 +24,7 @@ class Api::V1::DivesController < Api::BaseController
     @dive = Dive.new(dive_params)
 
     if @dive.save
-      return_dive
+      return_dive(:created)
     elsif @dive.invalid?
       unprocessable_entity(@dive)
     else
@@ -61,8 +61,8 @@ class Api::V1::DivesController < Api::BaseController
     @user = User.find(params[:user_id])
   end
 
-  def return_dive
-    render json: @dive, serializer: DiveSerializer
+  def return_dive(status=:ok)
+    render json: @dive, serializer: DiveSerializer, status: status
   end
 
   def dive_params

@@ -35,7 +35,7 @@ class Api::V1::UsersController < Api::BaseController
         name: @user.name,
         email: @user.email,
         access_token: @user.authentication_token
-      }
+      }, status: :created
     elsif @user.invalid?
       unprocessable_entity(@user)
     else

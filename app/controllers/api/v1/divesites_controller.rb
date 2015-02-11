@@ -15,7 +15,7 @@ class Api::V1::DivesitesController < Api::BaseController
     @divesite = Divesite.new(divesite_params)
 
     if @divesite.save
-      return_divesite
+      return_divesite(:created)
     elsif @divesite.invalid?
       unprocessable_entity(@divesite)
     else
@@ -48,8 +48,8 @@ class Api::V1::DivesitesController < Api::BaseController
     @user = User.find(params[:user_id])
   end
 
-  def return_divesite
-    render json: @divesite, serializer: DivesiteSerializer
+  def return_divesite(status=:ok)
+    render json: @divesite, serializer: DivesiteSerializer, status: status
   end
 
   def divesite_params
