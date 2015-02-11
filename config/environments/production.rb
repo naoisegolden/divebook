@@ -2,7 +2,8 @@ Divebook::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # mailer config
-  config.action_mailer.default_url_options = { :host => 'divebook.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'divebook.herokuapp.com' }
+  config.action_mailer.default_options = { from: 'no-reply@divebook.herokuapp.com' }
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",

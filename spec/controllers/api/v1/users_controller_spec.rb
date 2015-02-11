@@ -12,7 +12,7 @@ describe Api::V1::UsersController do
 
     before(:each) { get :show, id: user.id, access_token: user.authentication_token }
 
-    it 'returns success' do
+    it 'returns 200 OK' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -36,7 +36,7 @@ describe Api::V1::UsersController do
       put :update, id: user.id, name: 'Batman', access_token: user.authentication_token
     end
 
-    it 'returns success' do
+    it 'returns 200 OK' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -44,6 +44,35 @@ describe Api::V1::UsersController do
       user_json = { 'id' => user.id, 'name' => 'Batman' }
 
       expect(json).to eq(user_json)
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    let(:user) { create(:user) }
+
+    it 'returns unauthorized' do
+      delete :destroy, id: user.id
+
+      expect(response).to have_http_status(:unauthorized)
+    end
+
+    before(:each) do
+      delete :destroy, id: user.id, access_token: user.authentication_token
+    end
+
+    it 'returns 200 OK' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'delete User from DB' do
+      expect(User.all).not_to include user
+    end
+
+    let(:new_user) { create(:user) }
+    it 'returns 404 Not Found for second same request' do
+      delete :destroy, id: user.id, access_token: new_user.authentication_token
+
+      expect(response).to have_http_status(:not_found)
     end
   end
 end
