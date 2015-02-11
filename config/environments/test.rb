@@ -30,7 +30,7 @@ Divebook::Application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :test
   config.action_mailer.default_url_options = { host: 'divebook.herokuapp.com' }
-  config.action_mailer.default_options = { from: 'no-reply@divebook.herokuapp.com' }
+  config.action_mailer.default_options = { from: ENV['ADMIN_EMAIL'] }
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr

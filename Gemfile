@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 # basic
 gem 'rails', '4.2.0'
 gem 'pg' # thanks to http://railscasts.com/episodes/342-migrating-to-postgresql
@@ -66,6 +68,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'letter_opener'
+  gem 'spring'
 end
 
 group :production do
