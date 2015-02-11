@@ -81,6 +81,7 @@ GEM
     country_select (2.1.1)
       countries (>= 0.9.3, < 0.10.0)
     currencies (0.4.2)
+    database_cleaner (1.4.0)
     debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -89,12 +90,18 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (1.0.2)
     dotenv-deployment (0.2.0)
       dotenv (~> 1.0)
     erubis (2.7.0)
     execjs (2.3.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
     faraday (0.9.1)
@@ -198,6 +205,23 @@ GEM
     rake (10.4.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rspec-core (3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-rails (3.2.0)
+      actionpack (>= 3.0, <= 4.2)
+      activesupport (>= 3.0, <= 4.2)
+      railties (>= 3.0, <= 4.2)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
     sass (3.2.19)
     sass-rails (4.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -261,8 +285,10 @@ DEPENDENCIES
   codeclimate-test-reporter
   compass-rails
   country_select
+  database_cleaner
   devise (~> 3.4.1)
   dotenv-deployment
+  factory_girl_rails
   faker (~> 1.4)
   foundation-icons-sass-rails!
   geocoder
@@ -279,6 +305,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.0)
   rails-footnotes
+  rspec-rails
   sass-rails (~> 4.0.2)
   simple_form
   uglifier (>= 2.7.0)

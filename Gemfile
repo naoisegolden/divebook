@@ -58,6 +58,12 @@ group :development do
   gem 'annotate'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end
+
 group :development, :test do
   gem 'letter_opener'
 end
