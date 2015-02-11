@@ -67,3 +67,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'letter_opener'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'heroku-deflater'
+end

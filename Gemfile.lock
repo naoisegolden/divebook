@@ -111,6 +111,8 @@ GEM
     globalid (0.3.2)
       activesupport (>= 4.1.0)
     hashie (3.4.0)
+    heroku-deflater (0.5.3)
+      rack (>= 1.4.5)
     hike (1.2.3)
     hirb (0.7.3)
     hirb-unicode (0.0.5)
@@ -197,6 +199,11 @@ GEM
       rails (>= 3.2)
     rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -292,6 +299,7 @@ DEPENDENCIES
   faker (~> 1.4)
   foundation-icons-sass-rails!
   geocoder
+  heroku-deflater
   hirb-unicode
   kaminari
   letter_opener
@@ -305,6 +313,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.0)
   rails-footnotes
+  rails_12factor
   rspec-rails
   sass-rails (~> 4.0.2)
   simple_form
