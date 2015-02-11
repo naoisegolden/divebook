@@ -88,7 +88,7 @@ describe Api::V1::DivesitesController do
     let(:user)     { create(:user) }
 
     it 'returns unauthorized' do
-      get :show, id: user.id
+      get :show, id: divesite.id
 
       expect(response).to have_http_status(:unauthorized)
     end
@@ -106,15 +106,9 @@ describe Api::V1::DivesitesController do
     end
 
     it 'returns the Dive Site object' do
-      divesite_json = {
-        'id'        => divesite.id,
-        'name'      => divesite.name,
-        'address'   => divesite.address,
-        'latitude'  => divesite.latitude,
-        'longitude' => divesite.longitude
-      }
-
-      expect(json).to eq(divesite_json)
+      expect(json['id']).to      eq(divesite.id)
+      expect(json['name']).to    eq(divesite.name)
+      expect(json['address']).to eq(divesite.address)
     end
   end
 
