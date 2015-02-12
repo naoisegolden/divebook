@@ -9,6 +9,7 @@ class Image < ActiveRecord::Base
                           medium: '-quality 85 -strip',
                         standard: '-quality 80 -strip' }
 
+  validates :dive, presence: true
   validates_attachment :file,
     presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] }

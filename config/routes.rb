@@ -1,7 +1,7 @@
 Divebook::Application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :images, only: [:index, :show, :destroy]
+      resources :images, only: [:index, :show, :create, :destroy]
       get 'dives/:dive_id/images',         to: 'images#index'
       get 'divesites/:divesite_id/images', to: 'images#index'
       get 'users/:user_id/images',         to: 'images#index'

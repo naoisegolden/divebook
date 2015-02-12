@@ -1,5 +1,10 @@
 class ImageSerializer < ActiveModel::Serializer
-  attributes :id, :thumbnail, :medium, :standard, :original
+  attributes :id,
+             :dive_id,
+             :thumbnail,
+             :medium,
+             :standard,
+             :original
 
   def thumbnail
     object.file.url :thumbnail

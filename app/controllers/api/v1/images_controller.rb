@@ -1,6 +1,6 @@
 class Api::V1::ImagesController < Api::BaseController
   before_action :authenticate!
-  before_action :set_image, except: :index
+  before_action :set_image, except: [:index, :create]
   before_action :return_image, only: :show
 
   def index
@@ -21,6 +21,18 @@ class Api::V1::ImagesController < Api::BaseController
     end
 
     render json: @images, each_serializer: ImageSerializer
+  end
+
+  def create
+    @image = Image.new(image_params)
+
+    if @image.save
+      return_image(:created)
+    elsif @image.invalid?
+      unprocessable_entity(@image)
+    else
+      unexpected_error
+    end
   end
 
   def show
@@ -53,6 +65,6 @@ class Api::V1::ImagesController < Api::BaseController
   end
 
   def image_params
-    params.permit(:file)
+    params.permit(:file, :dive_id)
   end
 end
