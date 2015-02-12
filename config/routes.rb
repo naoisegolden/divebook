@@ -1,9 +1,14 @@
 Divebook::Application.routes.draw do
   namespace :api do
     namespace :v1 do
+      resources :images, only: [:index, :show, :destroy]
+      get 'dives/:dive_id/images',         to: 'images#index'
+      get 'divesites/:divesite_id/images', to: 'images#index'
+      get 'users/:user_id/images',         to: 'images#index'
+
       resources :dives, except: [:new, :edit]
       get 'divesites/:divesite_id/dives', to: 'dives#index'
-      get 'users/:user_id/dives', to: 'dives#index'
+      get 'users/:user_id/dives',         to: 'dives#index'
 
       resources :divesites, except: [:new, :edit]
       get 'users/:user_id/divesites', to: 'divesites#index'
