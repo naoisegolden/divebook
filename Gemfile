@@ -21,6 +21,7 @@ gem 'geocoder'
 
 # File Upload
 gem 'paperclip'
+gem 'aws-sdk', '< 2'
 
 # monitoring
 gem 'newrelic_rpm'
