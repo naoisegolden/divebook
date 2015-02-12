@@ -12,6 +12,7 @@
 class Dive < ActiveRecord::Base
   belongs_to :divesite
   belongs_to :user
+  has_many   :images
 
   validates :divesite, :user, presence: true
 

@@ -12,6 +12,7 @@
 #
 class Divesite < ActiveRecord::Base
   has_many :dives, class_name: 'Dive'
+  has_many :images, through: :dives
   has_many :users, through: :dives
 
   geocoded_by :address

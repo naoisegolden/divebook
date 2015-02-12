@@ -19,11 +19,15 @@ gem 'omniauth-facebook'
 # geocoding
 gem 'geocoder'
 
+# File Upload
+gem 'paperclip'
+
 # monitoring
 gem 'newrelic_rpm'
 
 # ENV variables
 gem 'dotenv-deployment'
+
 gem 'faker', '~> 1.4'
 
 # API

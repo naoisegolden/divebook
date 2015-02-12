@@ -28,6 +28,7 @@
 class User < ActiveRecord::Base
   has_many :dives, class_name: 'Dive'
   has_many :divesites, through: :dives
+  has_many :images, through: :dives
 
   before_save :ensure_authentication_token
 
