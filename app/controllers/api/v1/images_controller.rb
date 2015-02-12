@@ -38,6 +38,14 @@ class Api::V1::ImagesController < Api::BaseController
   def show
   end
 
+  def update
+    if @image.update(image_params)
+      return_image
+    else
+      unprocessable_entity(@image)
+    end
+  end
+
   def destroy
     return_image if @image.destroy
   end
