@@ -48,7 +48,7 @@ API URIs should be namespaced to `/api/v1/`
 ## Users
 ### Authentication
 
-`POST http://divebook.herokuapp.com/api/v1/auth`
+`POST https://divebook.herokuapp.com/api/v1/auth`
 
 #### Parameters
 
@@ -78,7 +78,7 @@ The created User object.
 
 ### Get User
 
-`GET http://divebook.herokuapp.com/api/users/:id`
+`GET https://divebook.herokuapp.com/api/users/:id`
 
 #### Parameters
 
@@ -105,7 +105,7 @@ The User object.
 
 ### Update User
 
-`PUT http://divebook.herokuapp.com/api/users/:id`
+`PUT https://divebook.herokuapp.com/api/users/:id`
 
 #### Parameters
 
@@ -135,7 +135,7 @@ The updated User object.
 
 ### Delete User
 
-`DELETE http://divebook.herokuapp.com/api/users/:id`
+`DELETE https://divebook.herokuapp.com/api/users/:id`
 
 #### Parameters
 
@@ -162,7 +162,7 @@ The deleted User object.
 
 ### Users by Dive Site
 
-`GET http://divebook.herokuapp.com/api/divesites/:divesite_id/users`
+`GET https://divebook.herokuapp.com/api/divesites/:divesite_id/users`
 
 #### Parameters
 
@@ -197,7 +197,7 @@ Array of User objects.
 
 ### All Dive Sites
 
-`GET http://divebook.herokuapp.com/api/divesites`
+`GET https://divebook.herokuapp.com/api/divesites`
 
 #### Parameters
 
@@ -233,7 +233,7 @@ Array of Dive Site objects.
 
 ### Add Dive Site
 
-`POST http://divebook.herokuapp.com/api/divesites`
+`POST https://divebook.herokuapp.com/api/divesites`
 
 #### Parameters
 
@@ -265,7 +265,7 @@ The created Dive Site object.
 
 ### Get Dive Site
 
-`GET http://divebook.herokuapp.com/api/divesites/:id`
+`GET https://divebook.herokuapp.com/api/divesites/:id`
 
 #### Parameters
 
@@ -296,7 +296,7 @@ The Dive Site object.
 ***
 
 ### Update Dive Site
-`PUT http://divebook.herokuapp.com/api/divesites/:id`
+`PUT https://divebook.herokuapp.com/api/divesites/:id`
 
 #### Parameters
 
@@ -329,7 +329,7 @@ The updated Dive Site object.
 ***
 
 ### Delete Dive Site
-`DELETE http://divebook.herokuapp.com/api/divesites/:id`
+`DELETE https://divebook.herokuapp.com/api/divesites/:id`
 
 #### Parameters
 
@@ -359,7 +359,7 @@ The deleted Dive Site object.
 ***
 
 ### Dive Sites by User
-`GET http://divebook.herokuapp.com/api/users/:user_id/divesites`
+`GET https://divebook.herokuapp.com/api/users/:user_id/divesites`
 
 #### Parameters
 
@@ -403,7 +403,7 @@ Array of Dive Site objects.
 
 ### Add Dive
 
-`POST http://divebook.herokuapp.com/api/dives`
+`POST https://divebook.herokuapp.com/api/dives`
 
 #### Parameters
 
@@ -435,7 +435,7 @@ The created Dive object.
 
 ### Get Dive
 
-`GET http://divebook.herokuapp.com/api/dives/:id`
+`GET https://divebook.herokuapp.com/api/dives/:id`
 
 #### Parameters
 
@@ -464,7 +464,7 @@ The Dive object.
 ***
 
 ### Update Dive
-`PUT http://divebook.herokuapp.com/api/dives/:id`
+`PUT https://divebook.herokuapp.com/api/dives/:id`
 
 #### Parameters
 
@@ -497,7 +497,7 @@ The updated Dive object.
 ***
 
 ### Delete Dive
-`DELETE http://divebook.herokuapp.com/api/dives/:id`
+`DELETE https://divebook.herokuapp.com/api/dives/:id`
 
 #### Parameters
 
@@ -526,7 +526,7 @@ The deleted Dive object.
 ***
 
 ### Dives by User
-`GET http://divebook.herokuapp.com/api/users/:user_id/dives`
+`GET https://divebook.herokuapp.com/api/users/:user_id/dives`
 
 #### Parameters
 
@@ -564,7 +564,7 @@ Array of Dive objects.
 ***
 
 ### Dives by Dive Site
-`GET http://divebook.herokuapp.com/api/divesites/:divesite_id/dives`
+`GET https://divebook.herokuapp.com/api/divesites/:divesite_id/dives`
 
 #### Parameters
 
@@ -606,7 +606,7 @@ Array of Dive objects.
 
 ### Add Image
 
-`POST http://divebook.herokuapp.com/api/images`
+`POST https://divebook.herokuapp.com/api/images`
 
 #### Parameters
 
@@ -645,7 +645,7 @@ The created Image object.
 
 ### Get Image
 
-`GET http://divebook.herokuapp.com/api/images/:id`
+`GET https://divebook.herokuapp.com/api/images/:id`
 
 #### Parameters
 
@@ -677,7 +677,7 @@ The Image object.
 ***
 
 ### Update Image
-`PUT http://divebook.herokuapp.com/api/images/:id`
+`PUT https://divebook.herokuapp.com/api/images/:id`
 
 #### Parameters
 
@@ -712,7 +712,7 @@ The updated Image object.
 ***
 
 ### Delete Image
-`DELETE http://divebook.herokuapp.com/api/images/:id`
+`DELETE https://divebook.herokuapp.com/api/images/:id`
 
 #### Parameters
 
@@ -744,7 +744,7 @@ The deleted Image object.
 ***
 
 ### Images by Dive
-`GET http://divebook.herokuapp.com/api/dives/:dive_id/images`
+`GET https://divebook.herokuapp.com/api/dives/:dive_id/images`
 
 #### Parameters
 
@@ -788,7 +788,7 @@ Array of Image objects.
 ***
 
 ### Images by Dive Site
-`GET http://divebook.herokuapp.com/api/divesites/:divesite_id/images`
+`GET https://divebook.herokuapp.com/api/divesites/:divesite_id/images`
 
 #### Parameters
 
@@ -832,7 +832,7 @@ Array of Image objects.
 ***
 
 ### Images by User
-`GET http://divebook.herokuapp.com/api/users/:user_id/images`
+`GET https://divebook.herokuapp.com/api/users/:user_id/images`
 
 #### Parameters
 
@@ -879,6 +879,6 @@ Array of Image objects.
 
 Requests that return multiple items will be paginated to 25 items by default. You can specify further pages with the `?page` parameter. For some resources, you can also set a custom page size up to 100 with the `?per_page` parameter.
 
-`GET http://divebook.herokuapp.com/api/dives?per_page=10&page=2`
+`GET https://divebook.herokuapp.com/api/dives?per_page=10&page=2`
 
 Note that page numbering is 1-based and that omitting the ?page parameter will return the first page.
